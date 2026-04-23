@@ -1,3 +1,9 @@
-print("Hello, World!")
+from http.server import HTTPServer, BaseHTTPRequestHandler
 
-#this is a comment
+class Handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"Hello from Hanu Priya DevOps!")
+
+HTTPServer(("", 8080), Handler).serve_forever()
