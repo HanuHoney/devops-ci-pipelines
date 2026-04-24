@@ -38,7 +38,7 @@ jobs:
       - name: Run tests
         run: |
           pip install pytest
-          pytest app.py --doctest-modules
+          pytest test_app.py -v
 
   build-push:
     runs-on: ubuntu-latest
