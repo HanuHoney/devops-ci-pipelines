@@ -6,5 +6,7 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(b"Hello from Hanu Priya DevOps!")
 
+        #Fix: protect server start for pytest
+
 if __name__ == "__main__":
     HTTPServer(("", 8080), Handler).serve_forever()
